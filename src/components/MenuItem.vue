@@ -1,52 +1,93 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const emit = defineEmits(['clicked'])
+const props = defineProps({
+  active: Boolean,
+  heading: String
+})
+
+// const onHover = ref(false);
+let onHover = ref(false);
+
+</script>
+
 <template>
-  <div class="item">
-    <!-- <i>
+  <div class="item" @click="emit('clicked')" @mouseenter="onHover = true" @mouseleave="onHover = false"
+    :class="{ onHover: onHover, active: props.active }">
+    <i>
       <slot name="icon"></slot>
-    </i> -->
+    </i>
     <div class="details">
       <h3>
-        <slot name="heading"></slot>
+        {{ props.heading }}
       </h3>
-      <slot></slot>
     </div>
   </div>
 </template>
 
 <style scoped>
 .item {
-  margin-top: 2rem;
+  white-space: nowrap;
   display: flex;
+  margin-top: 0;
+  height: 54px;
+  max-height: 54px;
+  transition: 0.4s;
+  border: 1.5px solid var(--color-link);
 }
 
-.details {
-  flex: 1;
+.item.onHover,
+.item.active {
+  border: 1.5px solid var(--color-text);
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item .details {
+  flex: 80;
   display: flex;
   align-items: center;
   margin-bottom: 0.2rem;
   margin-top: 0.3rem;
 }
 
-/* i {
+.item i {
+  min-width: 32px;
+  margin-left: 1rem;
+  flex: 20;
   display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
+  justify-content: center;
+  align-items: center;
+  fill: var(--color-link);
+  transition: 0.4s;
+}
 
-  color: var(--color-text);
-} */
+.item.onHover i,
+.item.active i {
+  fill: var(--color-text);
+}
 
-h3 {
+.item h3 {
+  padding: 0rem 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--color-heading);
+  transition: 0.4s;
+  color: var(--color-link);
+}
+
+.item.onHover h3,
+.item.active h3 {
+  color: var(--color-text);
 }
 
 @media (min-width: 1024px) {
-  .item {
+  /* .item {
     margin-top: 0;
     padding: 0.4rem 0 1rem 0rem;
-  }
+  } */
 
   /* i {
     top: calc(50% - 25px);
@@ -78,12 +119,12 @@ h3 {
     height: calc(50% - 25px);
   } */
 
-  .item:first-of-type:before {
+  /* .item:first-of-type:before {
     display: none;
   }
 
   .item:last-of-type:after {
     display: none;
-  }
+  } */
 }
 </style>

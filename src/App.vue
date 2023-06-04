@@ -7,48 +7,65 @@ import MailIcon from './components/icons/MailIcon.vue'
 </script>
 
 <template>
-  <div class="view-wrapper">
-    <RouterView />
-  </div>
+  <div class="main-container">
+    <div class="header-container">
+      <header>
+        <a href="mailto:santiago.tamashiro@gmail.com"><MailIcon /></a>
+        <a href="https://www.linkedin.com/in/stamashiro/"><LinkedInIcon /></a>
+        <a href="https://github.com/Macroshock"><GitHubIcon /></a>
+      </header>
+    </div>
 
-  <div class="side-container">
-    <header>
-      <a href="mailto: santiago.tamashiro@gmail.com"><MailIcon /></a>
-      <a href="https://www.linkedin.com/in/stamashiro/"><LinkedInIcon /></a>
-      <a href="https://github.com/Macroshock"><GitHubIcon /></a>
-    </header>
+    <div class="view-container">
+      <RouterView />
+    </div>
 
-    <div class="nav">
+    <div class="nav-container">
       <Navigation />
     </div>
   </div>
-
-  
 </template>
 
 <style scoped>
-nav {
-  line-height: 1.5;
-  max-height: 100vh;
+.main-container {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--c-blue-0);
+  height: 80vh;
 }
 
-.view-wrapper {
-  width: 800px;
+.view-container {
+  padding: 3rem;
+  min-height: 80%;
 }
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   height: 40px;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 header a {
   display: flex;
-  width: 8%;
+  /* width: 8%; */
   margin-left: 1rem;
   margin-right: 1rem;
   fill: var(--color-text);
 }
+
+.nav-container {
+  width: 80%;
+  max-width: 100%;
+}
+
+/* .content-container {
+  display: flex;
+  flex-direction: column;
+} */
 
 @media (min-width: 1024px) {
   nav {
