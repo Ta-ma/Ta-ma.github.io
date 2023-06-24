@@ -5,9 +5,8 @@ const emit = defineEmits(['clicked'])
 const props = defineProps({
   active: Boolean,
   heading: String
-})
+});
 
-// const onHover = ref(false);
 let onHover = ref(false);
 
 </script>

@@ -6,3 +6,7 @@
     <h1>Projects</h1>
   </main>
 </template>
+
+<style scoped>
+
+</style>
