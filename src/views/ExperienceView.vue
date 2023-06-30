@@ -12,7 +12,7 @@ const activeJob = ref(0);
       <div class="role-column">
         <div class="job-card" :class="{ active: activeJob === 0 }" @click="activeJob = 0">
           <div class="logo-container">
-            <img src="src/assets/images/logo_unlam.png">
+            <img src="src/assets/images/experience/logo_unlam.png">
           </div>
           <div class="role-container">
             <h4>Universidad Nacional de La Matanza</h4>
@@ -22,7 +22,7 @@ const activeJob = ref(0);
         </div>
         <div class="job-card" :class="{ active: activeJob === 1 }" @click="activeJob = 1">
           <div class="logo-container">
-            <img src="src/assets/images/logo_circo.png">
+            <img src="src/assets/images/experience/logo_circo.png">
           </div>
           <div class="role-container">
             <h3>Circo Studio</h3>
@@ -32,7 +32,7 @@ const activeJob = ref(0);
         </div>
         <div class="job-card" :class="{ active: activeJob === 2 }" @click="activeJob = 2">
           <div class="logo-container">
-            <img src="src/assets/images/logo_hahn.png">
+            <img src="src/assets/images/experience/logo_hahn.png">
           </div>
           <div class="role-container">
             <h3>Hahn Software</h3>

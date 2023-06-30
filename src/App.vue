@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Navigation from './components/Navigation.vue'
-import GitHubIcon from './components/icons/GitHubIcon.vue'
-import LinkedInIcon from './components/icons/LinkedInIcon.vue'
-import MailIcon from './components/icons/MailIcon.vue'
+import IconGitHub from './components/icons/IconGitHub.vue'
+import IconLinkedIn from './components/icons/IconLinkedIn.vue'
+import IconMail from './components/icons/IconMail.vue'
 </script>
 
 <template>
   <div class="main-container">
     <div class="header-container">
       <header>
-        <a href="mailto:santiago.tamashiro@gmail.com"><MailIcon /></a>
-        <a href="https://www.linkedin.com/in/stamashiro/"><LinkedInIcon /></a>
-        <a href="https://github.com/Macroshock"><GitHubIcon /></a>
+        <a href="mailto:santiago.tamashiro@gmail.com"><IconMail /></a>
+        <a href="https://www.linkedin.com/in/stamashiro/"><IconLinkedIn /></a>
+        <a href="https://github.com/Macroshock"><IconGitHub /></a>
       </header>
     </div>
 
