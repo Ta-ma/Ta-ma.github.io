@@ -1,19 +1,35 @@
 <script setup lang="ts">
+import BackendIcon from '../components/icons/IconBackend.vue'
+import FrontendIcon from '../components/icons/IconFrontend.vue'
+import DevOpsIcon from '../components/icons/IconDevOps.vue'
+import TechCard from '../components/TechCard.vue'
+
+// let frontendTechs = ["Angular", "Vue"]
 </script>
 
 <template>
   <main>
     <h1>Technologies</h1>
     <div class="card-container">
-      <div class="tech-card">
-        <div class="title">Frontend</div>
-      </div>
-      <div class="tech-card">
-        <div class="title">Backend</div>
-      </div>
-      <div class="tech-card">
-        <div class="title">DevOps</div>
-      </div>
+      <TechCard title="Frontend" :techs="['Angular', 'Vue', 'HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript']">
+        <template #icon>
+          <FrontendIcon/>
+        </template>
+      </TechCard>
+      <TechCard title="Backend" :techs="[
+        'C#', 'C/C++', 'Python', 'Go', '.NET', 'NodeJS', 'Express', 'SQLServer', 'MongoDB', 'PostgreSQL'
+      ]">
+        <template #icon>
+          <BackendIcon/>
+        </template>
+      </TechCard>
+      <TechCard title="DevOps" :techs="[
+        'Azure', 'AWSS', 'Docker', 'Bash', 'GitHub', 'GitLab', 'Azure DevOps', 'Terraform', 'Nginx', 'Traefik'
+      ]">
+        <template #icon>
+          <DevOpsIcon/>
+        </template>
+      </TechCard>
     </div>
   </main>
 </template>
@@ -24,22 +40,6 @@
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
-}
-
-.tech-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  height: 100%;
-  background-color: var(--c-blue-1);
-  box-shadow: 3px 4px 12px black;
-  padding: 1rem;
-}
-
-.tech-card .title {
-  font-size: x-large;
-  color: var(--c-orange);
 }
 
 </style>
