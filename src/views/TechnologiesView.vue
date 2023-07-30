@@ -3,8 +3,6 @@ import BackendIcon from '../components/icons/IconBackend.vue'
 import FrontendIcon from '../components/icons/IconFrontend.vue'
 import DevOpsIcon from '../components/icons/IconDevOps.vue'
 import TechCard from '../components/TechCard.vue'
-
-// let frontendTechs = ["Angular", "Vue"]
 </script>
 
 <template>
