@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "gsap": "^3.12.2",
     "v-viewer": "^3.0.11",
     "viewerjs": "^1.11.4",
     "vue": "^3.2.47",

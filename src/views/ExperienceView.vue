@@ -1,7 +1,31 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { gsap } from "gsap";
+import { onMounted, ref } from 'vue';
 
 const activeJob = ref(0);
+let cards: NodeListOf<Element>;
+let descriptions: NodeListOf<Element>;
+
+function changeActiveJob(job: number) {
+  gsap.to(descriptions[activeJob.value], { x: 800, opacity: 0 });
+  gsap.to(cards[activeJob.value], { scale: 1, margin: 10 });
+  gsap.to(descriptions[job], { x: 0, opacity: 1.0 });
+  gsap.to(cards[job], { scale: 1.4, margin: 25 });
+  activeJob.value = job;
+}
+
+onMounted(() => {
+  cards = document.querySelectorAll(".job-card");
+  descriptions = document.querySelectorAll(".job-description");
+
+  // Reset animations
+  for (let i = 0; i < 3; i++) {
+    gsap.to(descriptions[i], { x: 800, opacity: 0, duration: 0 });
+    gsap.to(cards[i], { scale: 1, margin: 10, duration: 0 });
+  }
+  activeJob.value = 0;
+  changeActiveJob(0);
+})
 
 </script>
 
@@ -10,7 +34,7 @@ const activeJob = ref(0);
     <h1>Experience</h1>
     <div class="content">
       <div class="role-column">
-        <div class="job-card" :class="{ active: activeJob === 0 }" @click="activeJob = 0">
+        <div class="job-card" :class="{ active: activeJob === 0 }" @click="(event) => changeActiveJob(0)">
           <div class="logo-container">
             <img src="src/assets/images/experience/logo_unlam.png">
           </div>
@@ -20,7 +44,7 @@ const activeJob = ref(0);
             <h4>2016 - 2019</h4>
           </div>
         </div>
-        <div class="job-card" :class="{ active: activeJob === 1 }" @click="activeJob = 1">
+        <div class="job-card" :class="{ active: activeJob === 1 }" @click="(event) => changeActiveJob(1)">
           <div class="logo-container">
             <img src="src/assets/images/experience/logo_circo.png">
           </div>
@@ -30,7 +54,7 @@ const activeJob = ref(0);
             <h4>2020 - 2021</h4>
           </div>
         </div>
-        <div class="job-card" :class="{ active: activeJob === 2 }" @click="activeJob = 2">
+        <div class="job-card" :class="{ active: activeJob === 2 }" @click="(event) => changeActiveJob(2)">
           <div class="logo-container">
             <img src="src/assets/images/experience/logo_hahn.png">
           </div>
@@ -42,7 +66,7 @@ const activeJob = ref(0);
         </div>
       </div>
       <div class="description-column">
-        <div v-if="activeJob === 0" class="job-description">
+        <div class="job-description" :class="{ active: activeJob === 0 }">
           <div class="text-block">
             <h3>I voluntereed as a part-time web developer for the research group GIDFIS, 
               which was focused on education related research.</h3>
@@ -60,7 +84,7 @@ const activeJob = ref(0);
             the academic papers, based on the data gathered from the platform.
           </h3>
         </div>
-        <div v-if="activeJob === 1" class="job-description">
+        <div class="job-description" :class="{ active: activeJob === 1 }">
           <h3 class="text-block">
             I worked on several web projects, backend services and APIs the customer which was a multimedia and 
             entertainment company, <b>using C#, .NET Framework 4.5 and .NET Core 3.1, Angular, MongoDB and SQL Server.</b>
@@ -78,7 +102,7 @@ const activeJob = ref(0);
             </ul>
           </h3>
         </div>
-        <div v-if="activeJob === 2" class="job-description">
+        <div class="job-description" :class="{ active: activeJob === 2 }">
           <h3 class="text-block">
             My role is to design, develop and document services and apps for a client who focuses on industrial 
             machinery. For this I have employed mainly <b>C#, Python, Golang, Angular, NodeJS, ExpressJS, TypeScript.</b>
@@ -123,6 +147,7 @@ const activeJob = ref(0);
 .job-card {
   display: flex;
   min-width: 70%;
+  margin: 10px;
   color: gray;
   background-color: var(--c-blue-1);
   padding: 1rem;
@@ -138,8 +163,6 @@ const activeJob = ref(0);
 
 .job-card.active {
   color: white;
-  font-size: 0.9rem;
-  max-width: 100%;
 }
 
 .job-card.active .logo-container img {
@@ -172,10 +195,12 @@ const activeJob = ref(0);
 
 .description-column {
   flex: 6;
+  overflow: hidden;
+}
+
+.job-description {
+  position: absolute;
   margin-left: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .job-description .text-block {
