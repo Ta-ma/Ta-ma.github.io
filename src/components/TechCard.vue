@@ -1,14 +1,40 @@
 <script lang="ts" setup>
+import { onMounted, ref } from 'vue';
+import { gsap } from "gsap";
 
 const props = defineProps({
   title: String,
   techs: Array<String>
 });
 
+const cardRef = ref(null);
+
+defineExpose({
+  playAnimation: () => {
+    if (cardRef.value) {
+      const card = cardRef.value as ParentNode;
+      const chips = card.querySelectorAll(".chip");
+      const timeline = gsap.timeline();
+    
+      timeline.to(card, { y: 0, opacity: 1.0 });
+      timeline.to(chips, { scale: 1.0, opacity: 1.0, stagger: 0.1 });
+    }
+  }
+})
+
+onMounted(() => {
+  if (cardRef.value) {
+    const card = cardRef.value as ParentNode;
+    const chips = card.querySelectorAll(".chip");
+
+    gsap.to(card, { y: 400, opacity: 0, duration: 0 });
+    gsap.to(chips, { scale: 0.1, opacity: 0.0, duration: 0 });
+  }
+})
 </script>
 
 <template>
-  <div class="tech-card">
+  <div class="tech-card" ref="cardRef">
     <div class="icon">
       <slot name="icon"></slot>
     </div>
@@ -47,6 +73,7 @@ const props = defineProps({
 .chips-container {
   display: flex;
   justify-content: center;
+  align-items: start;
   flex-grow: 1;
   gap: 1rem;
   width: 100%;
@@ -64,8 +91,9 @@ const props = defineProps({
 }
 
 .chip {
-  height: 2.7rem;
+  height: 2.4rem;
   color: black;
+  font-size: 0.9rem;
   font-weight: bold;
   padding: 0.6rem;
   background-color: var(--c-yellow);
