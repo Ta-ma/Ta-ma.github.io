@@ -29,11 +29,13 @@ import IconMail from './components/icons/IconMail.vue'
 <style scoped>
 .main-container {
   max-width: 1280px;
+  max-height: 800px;
   margin: auto;
   display: flex;
   flex-direction: column;
   background-color: var(--c-blue-0);
   height: 80vh;
+  border-radius: 50px;
 }
 
 .view-container {
@@ -51,28 +53,17 @@ header {
 
 header a {
   display: flex;
-  /* width: 8%; */
   margin-left: 1rem;
   margin-right: 1rem;
   fill: var(--color-text);
 }
 
+header a:hover {
+  fill: var(--color-text-hover);
+}
+
 .nav-container {
   width: 80%;
   max-width: 100%;
-}
-
-/* .content-container {
-  display: flex;
-  flex-direction: column;
-} */
-
-@media (min-width: 1024px) {
-  nav {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    /* place-items: center; */
-    /* padding-right: calc(var(--section-gap) / 2); */
-  }
 }
 </style>

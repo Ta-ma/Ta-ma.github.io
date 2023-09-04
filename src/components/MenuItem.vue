@@ -82,48 +82,4 @@ let onHover = ref(false);
   color: var(--color-text);
 }
 
-@media (min-width: 1024px) {
-  /* .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem 0rem;
-  } */
-
-  /* i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 2px solid var(--color-border);
-    background: var(--vt-c-indigo);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-    fill: white;
-  } */
-
-  /* .item:before {
-    content: ' ';
-    border-left: 2px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  } */
-
-  /* .item:after {
-    content: ' ';
-    border-left: 2px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  } */
-
-  /* .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
-  } */
-}
 </style>

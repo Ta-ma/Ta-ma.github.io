@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import MenuItem from './MenuItem.vue'
 import AboutMeIcon from './icons/IconAboutMe.vue'
@@ -68,25 +67,4 @@ nav a {
   display: inline-block;
   padding: 0.5rem 1rem;
 }
-
-/* nav:before {
-  content: " ";
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--c-pink)0%, var(--c-orange)50%, var(--c-red)100%);
-  opacity: 1;
-  border-top-left-radius: 8px;
-  transition: all .3s ease-in-out;
-  position: absolute;
-  top: -2px;
-  bottom: 0;
-  left: -2px;
-} */
-
-/* .menu-container {
-  background: var(--c-dark);
-  border-top-left-radius: 8px;
-  padding-top: 1rem;
-  padding-left: 1rem;
-} */
 </style>

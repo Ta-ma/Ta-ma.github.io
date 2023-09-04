@@ -25,7 +25,7 @@ onMounted(() => {
   }
   activeJob.value = 0;
   changeActiveJob(0);
-})
+});
 
 </script>
 

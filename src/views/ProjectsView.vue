@@ -2,16 +2,16 @@
 import { onMounted, ref } from 'vue';
 import { gsap } from "gsap";
 import ProjectCard from '@/components/ProjectCard.vue';
-import ArrowLeftIcon from '../components/icons/IconArrowLeft.vue'
-import ArrowRightIcon from '../components/icons/IconArrowRight.vue'
-import smileAwayImage1 from '@/assets/images/projects/smile-away/1.png'
-import smileAwayImage2 from '@/assets/images/projects/smile-away/2.png'
-import smileAwayImage3 from '@/assets/images/projects/smile-away/3.png'
-import walletShellImage1 from '@/assets/images/projects/wallet-shell/1.png'
-import programadosImage1 from '@/assets/images/projects/programados/1.png'
-import programadosImage2 from '@/assets/images/projects/programados/2.png'
-import saiaImage1 from '@/assets/images/projects/saia/1.png'
-import saiaImage2 from '@/assets/images/projects/saia/2.png'
+import ArrowLeftIcon from '../components/icons/IconArrowLeft.vue';
+import ArrowRightIcon from '../components/icons/IconArrowRight.vue';
+import smileAwayImage1 from '@/assets/images/projects/smile-away/1.png';
+import smileAwayImage2 from '@/assets/images/projects/smile-away/2.png';
+import smileAwayImage3 from '@/assets/images/projects/smile-away/3.png';
+import walletShellImage1 from '@/assets/images/projects/wallet-shell/1.png';
+import programadosImage1 from '@/assets/images/projects/programados/1.png';
+import programadosImage2 from '@/assets/images/projects/programados/2.png';
+import saiaImage1 from '@/assets/images/projects/saia/1.png';
+import saiaImage2 from '@/assets/images/projects/saia/2.png';
 
 const activePage = ref(0);
 let pages: any[] = [];
@@ -54,7 +54,7 @@ onMounted(() => {
   gsap.to(leftArrow.value, { opacity: 0, display: 'none', duration: 0 });
 
   switchPage(0);
-})
+});
 
 </script>
 

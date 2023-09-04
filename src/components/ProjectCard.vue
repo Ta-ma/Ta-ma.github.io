@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import VueViewer, { Viewer, directive } from 'v-viewer'
 
 const options =  {
   toolbar: false,

@@ -6,41 +6,35 @@ import FrontendIcon from '../components/icons/IconFrontend.vue'
 import DevOpsIcon from '../components/icons/IconDevOps.vue'
 import TechCard from '../components/TechCard.vue'
 
-const techCards: InstanceType<typeof TechCard>[] = [];
+const techCards: any[] = [];
 
 onMounted(() => {
   const timeline = gsap.timeline();
 
-  techCards.forEach((card) => {
-    timeline.call(card.playAnimation, [], "+=0.12");
+  techCards.forEach((card, i) => {
+    timeline.call(card.playAnimation, [], `${i * 0.14}`);
   });
 });
-
-const setCardRef = (el: any) => {
-  if (el) {
-    techCards.push(el)
-  }
-}
 </script>
 
 <template>
   <main>
     <h1>Technologies</h1>
     <div class="card-container">
-      <TechCard :ref="setCardRef" title="Frontend" :techs="['Angular', 'Vue', 'HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript']">
+      <TechCard :ref="(el) => (techCards[0] = el)" title="Frontend" :techs="['Angular', 'Vue', 'HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript']">
         <template #icon>
           <FrontendIcon/>
         </template>
       </TechCard>
-      <TechCard :ref="setCardRef" title="Backend" :techs="[
+      <TechCard :ref="(el) => (techCards[1] = el)" title="Backend" :techs="[
         'C#', 'C/C++', 'Python', 'Go', '.NET', 'NodeJS', 'Express', 'SQLServer', 'MongoDB', 'PostgreSQL'
       ]">
         <template #icon>
           <BackendIcon/>
         </template>
       </TechCard>
-      <TechCard :ref="setCardRef" title="DevOps" :techs="[
-        'Azure', 'AWSS', 'Docker', 'Bash', 'GitHub', 'GitLab', 'Azure DevOps', 'Terraform', 'Nginx', 'Traefik'
+      <TechCard :ref="(el) => (techCards[2] = el)" title="DevOps" :techs="[
+        'Azure', 'AWS', 'Docker', 'Bash', 'GitHub', 'GitLab', 'Azure DevOps', 'Terraform', 'Nginx', 'Traefik'
       ]">
         <template #icon>
           <DevOpsIcon/>
