@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import { gsap } from "gsap";
 import BackendIcon from '../components/icons/IconBackend.vue'
 import FrontendIcon from '../components/icons/IconFrontend.vue'
@@ -45,7 +45,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .card-container {
   display: flex;
   justify-content: space-around;
@@ -53,5 +52,4 @@ onMounted(() => {
   overflow: hidden;
   padding: .5rem 0;
 }
-
 </style>

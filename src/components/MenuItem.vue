@@ -81,5 +81,4 @@ let onHover = ref(false);
 .item.active h3 {
   color: var(--color-text);
 }
-
 </style>

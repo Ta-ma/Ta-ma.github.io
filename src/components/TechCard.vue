@@ -48,7 +48,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .tech-card {
   display: flex;
   flex-direction: column;
@@ -99,5 +98,4 @@ onMounted(() => {
   background-color: var(--c-yellow);
   border-radius: 20px;
 }
-
 </style>

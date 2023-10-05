@@ -21,8 +21,8 @@ const rightArrow = ref(null);
 
 function switchPage(page: number) {
   if (page <= activePage.value) {
-    gsap.to(pages[activePage.value], { x: 400, opacity: 0, display: 'none' });
-    gsap.to(pages[page], { x: 0, opacity: 1, display: 'flex' });
+    gsap.to(pages[activePage.value], { x: 400, opacity: 0, display: 'none', duration: 0.25 });
+    gsap.to(pages[page], { x: 0, opacity: 1, display: 'flex', duration: 0.5 });
 
     if (page === 0) {
       gsap.to(leftArrow.value, { opacity: 0, display: 'none', duration: 0.2 });
@@ -32,8 +32,8 @@ function switchPage(page: number) {
       gsap.to(rightArrow.value, { opacity: 1, display: 'block', duration: 0.2 });
     }
   } else {
-    gsap.to(pages[activePage.value], { x: -400, opacity: 0, display: 'none' });
-    gsap.to(pages[page], { x: 0, opacity: 1, display: 'flex' });
+    gsap.to(pages[activePage.value], { x: -400, opacity: 0, display: 'none', duration: 0.25 });
+    gsap.to(pages[page], { x: 0, opacity: 1, display: 'flex', duration: 0.5 });
 
     console.log(page, pages.length)
     if (activePage.value === 0) {
@@ -107,7 +107,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .projects-container {
   display: flex;
   gap: 2rem;
@@ -146,5 +145,4 @@ onMounted(() => {
 .projects-arrow .icon:hover {
   cursor: pointer;
 }
-
 </style>

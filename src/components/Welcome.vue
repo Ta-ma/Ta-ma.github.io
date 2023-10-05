@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import pic from '@/assets/images/welcome/pic.jpg'
+import pic from '@/assets/images/welcome/pic.png'
 import { gsap } from "gsap";
 import { onMounted, ref } from 'vue';
 
@@ -65,7 +65,7 @@ onMounted(() => {
 
 .pic-column img {
   display: block;
-  max-width: 200px;
+  max-width: 240px;
   height: auto;
 }
 
@@ -73,5 +73,4 @@ h3 {
   font-size: 1.2rem;
   left: 20px;
 }
-
 </style>

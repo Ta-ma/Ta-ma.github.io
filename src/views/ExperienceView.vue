@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { gsap } from "gsap";
 import { onMounted, ref } from 'vue';
+import UnlamLogo from '@/assets/images/experience/logo_unlam.png'
+import CircoLogo from '@/assets/images/experience/logo_circo.png'
+import HahnLogo from '@/assets/images/experience/logo_hahn.png'
 
 const activeJob = ref(0);
 let cards: NodeListOf<Element>;
@@ -36,7 +39,7 @@ onMounted(() => {
       <div class="role-column">
         <div class="job-card" :class="{ active: activeJob === 0 }" @click="(event) => changeActiveJob(0)">
           <div class="logo-container">
-            <img src="src/assets/images/experience/logo_unlam.png">
+            <img :src="UnlamLogo">
           </div>
           <div class="role-container">
             <h4>Universidad Nacional de La Matanza</h4>
@@ -46,7 +49,7 @@ onMounted(() => {
         </div>
         <div class="job-card" :class="{ active: activeJob === 1 }" @click="(event) => changeActiveJob(1)">
           <div class="logo-container">
-            <img src="src/assets/images/experience/logo_circo.png">
+            <img :src="CircoLogo">
           </div>
           <div class="role-container">
             <h3>Circo Studio</h3>
@@ -56,7 +59,7 @@ onMounted(() => {
         </div>
         <div class="job-card" :class="{ active: activeJob === 2 }" @click="(event) => changeActiveJob(2)">
           <div class="logo-container">
-            <img src="src/assets/images/experience/logo_hahn.png">
+            <img :src="HahnLogo">
           </div>
           <div class="role-container">
             <h3>Hahn Software</h3>
@@ -206,5 +209,4 @@ onMounted(() => {
 .job-description .text-block {
   margin-bottom: 1.5rem;
 }
-
 </style>

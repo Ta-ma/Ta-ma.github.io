@@ -30,7 +30,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
 .project-card {
   display: flex;
   flex-direction: column;
@@ -90,5 +89,4 @@ const props = defineProps({
   cursor: pointer;
   object-fit: contain;
 }
-
 </style>

@@ -13,7 +13,7 @@
   --vt-c-indigo: #2c3e50;
   --c-gold-light: #c4b704;
   --c-gold-dark: #b19402;
-  --c-dark: #142F43;
+  --c-dark: #071017;
   --c-purple: #72147E;
   --c-pink: #F21170;
   --c-red: #CD113B;
@@ -94,7 +94,7 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--vt-c-text-dark-1);
-  background: var(--c-black);
+  background: var(--c-dark);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
