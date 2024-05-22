@@ -27,7 +27,7 @@ onMounted(() => {
         </template>
       </TechCard>
       <TechCard :ref="(el) => (techCards[1] = el)" title="Backend" :techs="[
-        'C#', 'C/C++', 'Python', 'Go', '.NET', 'NodeJS', 'Express', 'SQLServer', 'MongoDB', 'PostgreSQL'
+        'C#', 'C/C++', 'Python', 'Go', '.NET', 'NodeJS', 'Express', 'SQLServer', 'PostgreSQL'
       ]">
         <template #icon>
           <BackendIcon/>

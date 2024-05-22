@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import pic from '@/assets/images/welcome/pic.png'
+import pic from '@/assets/images/welcome/pic2.drawio.png'
 import { gsap } from "gsap";
 import { onMounted, ref } from 'vue';
 
@@ -31,7 +31,7 @@ onMounted(() => {
           My is Santiago Tamashiro and I'm a software engineer from Argentina.
         </h3>
         <h3 class="text-block" style="margin-bottom: 2rem;">
-          I have +3 years of professional experience during which I've worked for web, desktop,
+          I have +4 years of professional experience during which I've worked for web, desktop,
           services and infrastructure projects, from design and development to deployment.
         </h3>
         <h3 class="text-block">
@@ -60,7 +60,6 @@ onMounted(() => {
   flex: 3;
   display: flex;
   justify-content: center;
-  max-height: 260px;
 }
 
 .pic-column img {
