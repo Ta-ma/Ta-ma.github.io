@@ -12,10 +12,10 @@ import programadosImage1 from '@/assets/images/projects/programados/1.png';
 import programadosImage2 from '@/assets/images/projects/programados/2.png';
 import saiaImage1 from '@/assets/images/projects/saia/1.png';
 import saiaImage2 from '@/assets/images/projects/saia/2.png';
+import propFilter1 from '@/assets/images/projects/prop-filter/1.gif';
 
 const activePage = ref(0);
 let pages: any[] = [];
-let cards: any[] = [];
 const leftArrow = ref(null);
 const rightArrow = ref(null);
 
@@ -35,7 +35,6 @@ function switchPage(page: number) {
     gsap.to(pages[activePage.value], { x: -400, opacity: 0, display: 'none', duration: 0.25 });
     gsap.to(pages[page], { x: 0, opacity: 1, display: 'flex', duration: 0.5 });
 
-    console.log(page, pages.length)
     if (activePage.value === 0) {
       gsap.to(leftArrow.value, { opacity: 1, display: 'block', duration: 0.2 });
     }
@@ -47,6 +46,14 @@ function switchPage(page: number) {
   activePage.value = page;
 }
 
+function nextPage() {
+	switchPage(activePage.value + 1)
+}
+
+function previousPage() {
+	switchPage(activePage.value - 1)
+}
+
 onMounted(() => {
   pages.forEach(p => {
     gsap.to(p, { x: 400, opacity: 0, display: 'none', duration: 0 });
@@ -55,7 +62,6 @@ onMounted(() => {
 
   switchPage(0);
 });
-
 </script>
 
 <template>
@@ -63,34 +69,34 @@ onMounted(() => {
     <h1>Projects</h1>
     <div class="projects-container">
       <div class="projects-arrow">
-        <div ref="leftArrow" @click="switchPage(0)"><ArrowLeftIcon class="icon"/></div>
+        <div ref="leftArrow" @click="previousPage()"><ArrowLeftIcon class="icon"/></div>
       </div>
       <div class="projects-section">
-        <div :ref="(el) => (pages[0] = el)" :class="{ active: activePage === 0 }" class="projects-page">
-          <ProjectCard :ref="(el) => (cards[0] = el)"
+        <div :ref="(el) => (pages[0] = el)" class="projects-page">
+					<ProjectCard
+            title="Props Filter" 
+            description="Demo project for a CLI application that filters and displays real estate data." 
+            :techs="['Golang', 'PostgreSQL', 'Docker']"
+            :images="[propFilter1]"
+          >
+          </ProjectCard>
+          <ProjectCard
             title="Smile Away" 
             description="Mobile videogame for Android devices." 
             :techs="['Unity', 'C#']"
             :images="[smileAwayImage1, smileAwayImage2, smileAwayImage3]"
           >
           </ProjectCard>
-          <ProjectCard :ref="(el) => (cards[1] = el)"
+        </div>
+        <div :ref="(el) => (pages[1] = el)" class="projects-page">
+          <ProjectCard
             title="Walletshell" 
             description="Front-end wallet app for the TurtleCoin cryptocurrency." 
             :techs="['Electron', 'NodeJS', 'HTML', 'CSS', 'Javascript']"
             :images="[walletShellImage1]"
           >
           </ProjectCard>
-        </div>
-        <div :ref="(el) => (pages[1] = el)" :class="{ active: activePage === 1 }" class="projects-page">
-          <ProjectCard :ref="(el) => (cards[2] = el)"
-            title="Programados" 
-            description="Web platform for programming practice for students." 
-            :techs="['C#', 'Javascript', 'ASP.NET MVC 5', 'JQuery', 'SQL Server', 'Materialize']"
-            :images="[programadosImage1, programadosImage2]"
-          >
-          </ProjectCard>
-          <ProjectCard :ref="(el) => (cards[3] = el)"
+          <ProjectCard
             title="SAIA" 
             description="Desktop app to automatically generate subtitles for movies using AI." 
             :techs="['JavaFX', 'React', 'NodeJS', 'Express', 'Google Cloud', 'Azure']"
@@ -98,9 +104,18 @@ onMounted(() => {
           >
           </ProjectCard>
         </div>
+        <div :ref="(el) => (pages[2] = el)" class="projects-page">
+          <ProjectCard
+            title="Programados" 
+            description="Web platform for programming practice for students." 
+            :techs="['C#', 'Javascript', 'ASP.NET MVC 5', 'JQuery', 'SQL Server', 'Materialize']"
+            :images="[programadosImage1, programadosImage2]"
+          >
+          </ProjectCard>
+        </div>
       </div>
       <div class="projects-arrow">
-        <div ref="rightArrow" @click="switchPage(1)"><ArrowRightIcon class="icon"/></div>
+        <div ref="rightArrow" @click="nextPage()"><ArrowRightIcon class="icon"/></div>
       </div>
     </div>
   </main>
