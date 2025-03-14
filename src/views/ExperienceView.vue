@@ -53,7 +53,7 @@ onMounted(() => {
           </div>
           <div class="role-container">
             <h3>Circo Studio</h3>
-            <h2>Fullstack Developer</h2>
+            <h2>Full Stack Developer</h2>
             <h4>2020 - 2021</h4>
           </div>
         </div>
@@ -71,12 +71,12 @@ onMounted(() => {
       <div class="description-column">
         <div class="job-description" :class="{ active: activeJob === 0 }">
           <div class="text-block">
-            <h3>I voluntereed as a part-time web developer for the research group GIDFIS, 
+            <h3>I volunteered as a part-time web developer for the research group GIDFIS, 
               which was focused on education related research.</h3>
             <br/>
-            <h3>Here I participated in the development of ther platform "Programados", a website to 
+            <h3>Here I participated in the development of their platform "Programados", a website to 
               help students enhance their programming skills. I worked mostly as a <b>C#, JavaScript 
-              developer and SQL database mantainer.</b></h3>
+              developer and SQL database maintainer.</b></h3>
           </div>
           <h3 class="text-block">
             We achieved an increase in student performance in entry-level programming exams, 
@@ -97,7 +97,7 @@ onMounted(() => {
             metadata to broadcaster companies external systems. This system was responsible for:
             <ul>
               <li>Exchanging metadata using various XML formats with external APIs.</li>
-              <li>Transfering media assets using <b>IBM's Aspera service.</b></li>
+              <li>Transferring media assets using <b>IBM's Aspera service.</b></li>
               <li>Tracking status of media bundles being sent to external systems.</li>
               <li>Encoding video files in different formats using <b>AWS Elemental.</b></li>
               <li>Synchronizing subtitles for movies that were split in segments.</li>
@@ -107,20 +107,23 @@ onMounted(() => {
         </div>
         <div class="job-description" :class="{ active: activeJob === 2 }">
           <h3 class="text-block">
-            My role is to design, develop and document services and apps for a client who focuses on industrial 
-            machinery. For this I have employed mainly <b>C#, Python, Golang, Angular, NodeJS, ExpressJS, TypeScript.</b>
+            I've been involved in several projects from different customers in retail, machinery and manufacturing industry.
+						For these I have employed mainly <b>C#, Python, Golang, Angular, NodeJS, Azure, SQL and TypeScript.</b>
           </h3>
           <h3 class="text-block">
-            I've worked in the design of industrial applications meant to manage machine's tools, parse NC G-code files,
-            monitor tool lifetime status, visualizing sensors data obtained through the PLC and more.
+            Examples of projects I've worked in:
+						<ul>
+							<li>NC G-Code file parser for machine tools management.</li>
+							<li>Touch interface for milling/drilling machines.</li>
+							<li>Pipeline for the generation of documentation using <b>MkDocs</b>.</li>
+							<li>Widget for Electron to retrieve files from different sources.</li>
+							<li>Suite of web apps for time tracking and management.</li>
+							<li>ETL jobs using Hangfire and front-end web applications.</li>
+            </ul>
           </h3>
           <h3 class="text-block">
-            I created a pipeline to generate and integrate documentation from several Git repositories using <b>MkDocs,
-            Azure DevOps pipelines and Azure WebApps.</b>
-          </h3>
-          <h3 class="text-block">
-            I also provide consulting regarding software architecture for IIoT systems, project management, viability 
-            and effort estimations.
+            I also provide consulting regarding software architecture, project management, viability 
+            and estimations.
           </h3>
         </div>
       </div>

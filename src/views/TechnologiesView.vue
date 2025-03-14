@@ -34,7 +34,7 @@ onMounted(() => {
         </template>
       </TechCard>
       <TechCard :ref="(el) => (techCards[2] = el)" title="DevOps" :techs="[
-        'Azure', 'AWS', 'Docker', 'Bash', 'GitHub', 'GitLab', 'Azure DevOps', 'Terraform', 'Nginx', 'Traefik'
+        'Azure', 'AWS', 'Docker', 'Bash', 'GitHub', 'GitLab', 'Azure DevOps', 'Nginx', 'Traefik'
       ]">
         <template #icon>
           <DevOpsIcon/>

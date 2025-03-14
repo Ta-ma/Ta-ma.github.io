@@ -66,7 +66,7 @@ onMounted(() => {
         <div ref="leftArrow" @click="switchPage(0)"><ArrowLeftIcon class="icon"/></div>
       </div>
       <div class="projects-section">
-        <div :ref="(el) => (pages[0] = el)" :class="{ active: activePage === 1 }" class="projects-page">
+        <div :ref="(el) => (pages[0] = el)" :class="{ active: activePage === 0 }" class="projects-page">
           <ProjectCard :ref="(el) => (cards[0] = el)"
             title="Smile Away" 
             description="Mobile videogame for Android devices." 

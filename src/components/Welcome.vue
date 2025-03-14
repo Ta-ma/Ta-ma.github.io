@@ -28,14 +28,14 @@ onMounted(() => {
   <div class="content">
     <div class="text-column">
         <h3 class="text-block" style="margin-bottom: 2rem;">
-          My is Santiago Tamashiro and I'm a software engineer from Argentina.
+          My is Santiago Tamashiro, and I'm a software engineer from Argentina.
         </h3>
         <h3 class="text-block" style="margin-bottom: 2rem;">
-          I have +4 years of professional experience during which I've worked for web, desktop,
+          I have +5 years of professional experience during which I've worked for web, desktop,
           services and infrastructure projects, from design and development to deployment.
         </h3>
         <h3 class="text-block">
-          Most of my experience is doing full-stack development, but I have also done software architecture, technical documentation, DevOps automation and general software consultancy.
+          Most of my experience is doing Full Stack development, but I have also done software architecture, technical documentation, DevOps automation and general software consultancy.
         </h3>
     </div>
     <div class="pic-column">
